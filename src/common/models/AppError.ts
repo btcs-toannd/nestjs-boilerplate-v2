@@ -1,0 +1,15 @@
+import { HttpStatus } from '@nestjs/common';
+
+export enum CustomErrorCode {
+  SIP_ACCOUNT_NOT_FOUND = 1101,
+}
+
+export enum CustomErrorMessage {
+  AST_QUEUE_MEMBER_NOT_FOUND = 'You must login sip account first',
+}
+
+export default interface AppError {
+  // represent the detail of the error
+  messages: string;
+  errorCode: HttpStatus | CustomErrorCode;
+}
