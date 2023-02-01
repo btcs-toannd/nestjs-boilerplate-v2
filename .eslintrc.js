@@ -20,9 +20,12 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    'max-classes-per-file': 'off',
     'no-useless-constructor': 'off',
     'no-shadow': 'off',
+    'no-restricted-syntax': 'off',
     'class-methods-use-this': 'off',
+    'lines-between-class-members': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -43,6 +46,8 @@ module.exports = {
       'error',
       { devDependencies: ['**/*.test.ts', '**/*.spec.ts', '**/*.e2e-spec.ts'] },
     ],
+    'import/no-extraneous-dependencies': 'off',
+    'import/no-cycle': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -53,11 +58,9 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.ts'],
       },
-      typescript: {
-        project: {},
-      },
+      typescript: {},
     },
   },
 };

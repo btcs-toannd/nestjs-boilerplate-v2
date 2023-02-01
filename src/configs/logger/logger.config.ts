@@ -4,9 +4,10 @@ import { DestinationStream } from 'pino';
 import { Options } from 'pino-http';
 import { PrettyOptions } from 'pino-pretty';
 
-export function getPinoHttpOptions(
-  options,
-): Options | DestinationStream | [opts: Options, stream: DestinationStream] {
+export function getPinoHttpOptions():
+  | Options
+  | DestinationStream
+  | [opts: Options, stream: DestinationStream] {
   return {
     level: 'trace',
     transport:
@@ -39,7 +40,6 @@ export function getPinoHttpOptions(
       return `Request ${req.method} ${req.url} completed with status code: ${res.statusCode}`;
     },
     customErrorMessage: (req, res, err) => {
-      console.log(err);
       return `Request ${req.method} ${req.url} errored with status code: ${res.statusCode}`;
     },
     customAttributeKeys: {

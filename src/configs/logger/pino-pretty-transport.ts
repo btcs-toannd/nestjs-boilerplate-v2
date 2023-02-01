@@ -1,5 +1,4 @@
 /* eslint-disable import/no-import-module-exports */
-/* eslint-disable import/no-extraneous-dependencies */
 import PinoPretty, { PrettyOptions, colorizerFactory } from 'pino-pretty';
 import { red, gray, green, blue, yellow } from 'colors';
 
@@ -10,7 +9,7 @@ const levelPrettifier = (logLevel) => {
     case 10:
       return `🤔 ${baseLevelLog}`;
     case 20:
-      return `🥲 ${baseLevelLog}`;
+      return `🥲  ${baseLevelLog}`;
     case 40:
       return `😳 ${baseLevelLog}`;
     case 50:

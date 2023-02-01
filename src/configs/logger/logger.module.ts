@@ -46,7 +46,6 @@ const getPinoHttpOptions = (
     return `Request ${req.method} ${req.url} completed with status code: ${res.statusCode}`;
   },
   customErrorMessage: (req, res, err) => {
-    console.log(err);
     return `Request ${req.method} ${req.url} errored with status code: ${res.statusCode}`;
   },
   customAttributeKeys: {
@@ -67,6 +66,7 @@ const getPinoHttpOptions = (
       cache: true,
     }),
     PinoLoggerModule.forRootAsync({
+      // eslint-disable-next-line no-use-before-define
       imports: [LoggerModule],
       inject: [LoggerService],
       useFactory: (loggerService: LoggerService) => {

@@ -12,6 +12,9 @@ import { AppConfigService } from 'configs/app/config.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: `.env.${
+        process.env.NODE_ENV === 'production' ? 'production' : ''
+      }`,
       load: [configuration],
       validate,
       cache: true,

@@ -6,7 +6,6 @@ import { CustomRequest } from 'src/common/models/CustomRequest';
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {
-  // eslint-disable-next-line class-methods-use-this
   async use(req: CustomRequest, res: Response, next: NextFunction) {
     try {
       // Middleware logic

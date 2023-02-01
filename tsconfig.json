@@ -12,6 +12,7 @@
     "baseUrl": "./",
     "paths": {
       "configs/*": ["./src/configs/*"],
+      "providers/*": ["./src/providers/*"],
     },
     "incremental": true,
     "skipLibCheck": true,
@@ -19,6 +20,8 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "noEmitOnError": true,
+    "esModuleInterop": true
   }
 }

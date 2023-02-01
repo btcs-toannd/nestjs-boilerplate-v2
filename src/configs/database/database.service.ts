@@ -18,6 +18,10 @@ export class DatabaseConfigService {
     return Number(this.configService.get<number>('database.port'));
   }
 
+  get database(): string {
+    return this.configService.get<string>('database.database');
+  }
+
   get username(): string {
     return this.configService.get<string>('database.username');
   }

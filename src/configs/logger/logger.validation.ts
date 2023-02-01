@@ -7,6 +7,7 @@ export function validate(config: Record<string, unknown>) {
   const validatedConfig = plainToInstance(LoggerVariables, config, {
     enableImplicitConversion: true,
   });
+
   const errors = validateSync(validatedConfig, {
     skipMissingProperties: false,
   });

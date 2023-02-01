@@ -1,13 +1,13 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 
 import { LoggerModule } from 'configs/logger/logger.module';
+import { AppConfigModule } from 'configs/app/config.module';
+import { DatabaseConfigModule } from 'configs/database/database.module';
+import { AuthModule } from 'src/modules/resources/auth/auth.module';
+import { UserModule } from 'src/modules/resources/user/user.module';
+import { AuthMiddleware } from './common/middlewares/auth.middleware';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AppConfigModule } from './configs/app/config.module';
-import { DatabaseConfigModule } from './configs/database/database.module';
-import { UserModule } from './models/user/user.module';
-import { GroupModule } from './models/group/group.module';
-import { AuthMiddleware } from './common/middlewares/auth.middleware';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { AuthMiddleware } from './common/middlewares/auth.middleware';
     DatabaseConfigModule,
     LoggerModule,
     UserModule,
-    GroupModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
